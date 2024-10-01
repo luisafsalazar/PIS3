@@ -1,0 +1,11 @@
+{
+  "training": [
+    {
+      "image": "C:/Users/user/Desktop/Lu_novia_linda/images_filtradas/images_filtradas/UPENN-GBM-00008_11/UPENN-GBM-00008_11_FLAIR.nii",
+      "label":"C:/Users/user/Desktop/Lu_novia_linda/images_filtradas/images_filtradas/UPENN-GBM-00008_11/UPENN-GBM-00008_11_FLAIR.nii"    },
+    {
+      "image": "C:/Users/user/Desktop/Lu_novia_linda/images_filtradas/images_filtradas/UPENN-GBM-00008_11/UPENN-GBM-00008_11_FLAIR.nii",
+      "label":"C:/Users/user/Desktop/Lu_novia_linda/images_filtradas/images_filtradas/UPENN-GBM-00008_11/UPENN-GBM-00008_11_FLAIR.nii"    }
+  ]
+}
+

@@ -1,0 +1,55 @@
+<EasyDict 0x20e20fdc870
+  'data_root': 'F:\\repo\\Slim-UNETR\\images_filtradas\\UPENN-GBM-00008_11',
+  'finetune': <EasyDict 0x20e20fdc960
+    'checkpoint': 'hepatic_vessel'
+  >,
+  'slim_unetr': <EasyDict 0x20e20fdcaf0
+    'blocks': [1, 2, 3, 2],
+    'channels': [24, 48, 60],
+    'dropout': 0.3,
+    'embed_dim': 96,
+    'embedding_dim': 27,
+    'heads': [1, 2, 4, 4],
+    'in_channels': 1,
+    'out_channels': 2,
+    'r': [4, 2, 2, 1]
+  >,
+  'trainer': <EasyDict 0x20e20fddcc0
+    'batch_size': 16,
+    'image_size': 240,
+    'lr': 0.001,
+    'min_lr': 1e-07,
+    'momentum_teacher': 0.996,
+    'num_epochs': 1000,
+    'num_workers': 16,
+    'optimizer': 'adamw',
+    'pred_ratio_var': 0,
+    'resume': False,
+    'train_ratio': 0.8,
+    'warmup': 5,
+    'weight_decay': 0.05,
+    'weight_decay_end': 0.04
+  >
+>
+Load Model...
+Load Dataloader...
+Traceback (most recent call last):
+  File "e:\Slim-UNETR\main.py", line 226, in <module>
+    train_loader, val_loader = get_dataloader(config, data_flag)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Slim-UNETR\src\loader.py", line 308, in get_dataloader
+    train_transform, val_transform = get_MSD_transforms(config)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Slim-UNETR\src\loader.py", line 233, in get_MSD_transforms
+    train_transform = monai.transforms.Compose(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\VLACHO\AppData\Local\Programs\Python\Python312\Lib\site-packages\monai\transforms\compose.py", line 251, in __init__
+    self.set_random_state(seed=get_seed())
+  File "C:\Users\VLACHO\AppData\Local\Programs\Python\Python312\Lib\site-packages\monai\transforms\compose.py", line 263, in set_random_state
+    _transform.set_random_state(seed=self.R.randint(MAX_SEED, dtype="uint32"))
+  File "C:\Users\VLACHO\AppData\Local\Programs\Python\Python312\Lib\site-packages\monai\transforms\croppad\dictionary.py", line 968, in set_random_state
+    super().set_random_state(seed, state)
+  File "C:\Users\VLACHO\AppData\Local\Programs\Python\Python312\Lib\site-packages\monai\transforms\transform.py", line 207, in set_random_state
+    _seed = _seed % MAX_SEED
+            ~~~~~~^~~~~~~~~~
+OverflowError: Python int too large to convert to C long
